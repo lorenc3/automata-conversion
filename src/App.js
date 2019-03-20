@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import nfa from './nfa2.json';
+import nfa from './ε-nfa3.json';
 
 class App extends Component {
-	eClose = id => {
+	sortIds = (a, b) => {
+		return a - b;
+	};
+	eClose = (id, idArr) => {
 		//arr with all the state ids that we get from eClose-ing the param id
-		const eCloseArr = [id];
+		const eCloseArr = idArr;
 		nfa.map(item => {
 			if (item.id === id) {
 				item.transitions.map(item => {
@@ -15,7 +18,7 @@ class App extends Component {
 						!eCloseArr.includes(item.to)
 					) {
 						eCloseArr.push(item.to);
-						this.eClose(item.to);
+						this.eClose(item.to, eCloseArr);
 					}
 					return null;
 				});
@@ -41,7 +44,7 @@ class App extends Component {
 			}
 			return null;
 		});
-		return inputs.sort();
+		return inputs.sort(this.sortIds);
 	};
 
 	isFinal(finalStates, state) {
@@ -77,7 +80,7 @@ class App extends Component {
 					if (state.id === stateId) {
 						state.transitions.map(item => {
 							if (item.with.includes(input)) {
-								var eClosed = this.eClose(item.to);
+								var eClosed = this.eClose(item.to, [item.to]);
 								eClosed.map(id => {
 									if (!newState.includes(id)) {
 										newState.push(id);
@@ -94,11 +97,11 @@ class App extends Component {
 			});
 
 			var stateObj = {
-				states: newState.sort(),
+				states: newState.sort(this.sortIds),
 				input,
 				label:
 					newState.length !== 0
-						? `{${newState.sort().join(', ')}}`
+						? `{${newState.sort(this.sortIds).join(', ')}}`
 						: `{Ø}`
 			};
 
@@ -194,8 +197,8 @@ class App extends Component {
 
 		//eClose initial state
 		const dfaInitial = {
-			states: this.eClose(initial.id),
-			label: `{${this.eClose(initial.id).join(', ')}}`
+			states: this.eClose(initial.id, [initial.id]),
+			label: `{${this.eClose(initial.id, [initial.id]).join(', ')}}`
 		};
 		console.log('DFA initial state set', dfaInitial);
 

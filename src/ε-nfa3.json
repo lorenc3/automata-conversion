@@ -1,0 +1,215 @@
+[
+	{
+		"id": 0,
+		"label": "0",
+		"initial": true,
+		"transitions": [
+			{
+				"to": 1,
+				"with": ["eps"]
+			}
+		]
+	},
+	{
+		"id": 1,
+		"label": "1",
+		"transitions": [
+			{
+				"to": 3,
+				"with": ["eps"]
+			},
+			{
+				"to": 5,
+				"with": ["eps"]
+			}
+		]
+	},
+	{
+		"id": 3,
+		"label": "3",
+		"transitions": [
+			{
+				"to": 4,
+				"with": ["a"]
+			}
+		]
+	},
+	{
+		"id": 4,
+		"label": "4",
+		"transitions": [
+			{
+				"to": 7,
+				"with": ["eps"]
+			}
+		]
+	},
+	{
+		"id": 5,
+		"label": "5",
+		"transitions": [
+			{
+				"to": 6,
+				"with": ["b"]
+			}
+		]
+	},
+	{
+		"id": 6,
+		"label": "6",
+		"transitions": [
+			{
+				"to": 7,
+				"with": ["eps"]
+			}
+		]
+	},
+	{
+		"id": 7,
+		"label": "7",
+		"transitions": [
+			{
+				"to": 8,
+				"with": ["eps"]
+			}
+		]
+	},
+	{
+		"id": 8,
+		"label": "8",
+		"transitions": [
+			{
+				"to": 9,
+				"with": ["eps"]
+			}
+		]
+	},
+	{
+		"id": 9,
+		"label": "9",
+		"transitions": [
+			{
+				"to": 10,
+				"with": ["eps"]
+			}
+		]
+	},
+	{
+		"id": 10,
+		"label": "10",
+		"transitions": [
+			{
+				"to": 11,
+				"with": ["a"]
+			}
+		]
+	},
+	{
+		"id": 11,
+		"label": "11",
+		"transitions": [
+			{
+				"to": 12,
+				"with": ["eps"]
+			},
+			{
+				"to": 10,
+				"with": ["eps"]
+			}
+		]
+	},
+	{
+		"id": 12,
+		"label": "12",
+		"transitions": [
+			{
+				"to": 9,
+				"with": ["eps"]
+			},
+			{
+				"to": 13,
+				"with": ["eps"]
+			}
+		]
+	},
+	{
+		"id": 13,
+		"label": "13",
+		"transitions": [
+			{
+				"to": 14,
+				"with": ["a"]
+			}
+		]
+	},
+	{
+		"id": 14,
+		"label": "14",
+		"transitions": [
+			{
+				"to": 15,
+				"with": ["eps"]
+			}
+		]
+	},
+	{
+		"id": 15,
+		"label": "15",
+		"transitions": [
+			{
+				"to": 16,
+				"with": ["eps"]
+			},
+			{
+				"to": 18,
+				"with": ["eps"]
+			}
+		]
+	},
+	{
+		"id": 16,
+		"label": "16",
+		"transitions": [
+			{
+				"to": 16,
+				"with": ["a"]
+			}
+		]
+	},
+	{
+		"id": 17,
+		"label": "17",
+		"transitions": [
+			{
+				"to": 20,
+				"with": ["eps"]
+			}
+		]
+	},
+	{
+		"id": 18,
+		"label": "18",
+		"transitions": [
+			{
+				"to": 19,
+				"with": ["b"]
+			}
+		]
+	},
+	{
+		"id": 19,
+		"label": "19",
+		"transitions": [
+			{
+				"to": 20,
+				"with": ["eps"]
+			}
+		]
+	},
+	{
+		"id": 20,
+		"label": "20",
+		"final": true,
+		"transitions": []
+	}
+]
