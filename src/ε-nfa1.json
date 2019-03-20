@@ -1,0 +1,42 @@
+[
+	{
+		"id": 1,
+		"label": "1",
+		"initial": true,
+		"transitions": [
+			{
+				"to": 2,
+				"with": ["eps"]
+			},
+			{
+				"to": 3,
+				"with": ["a"]
+			}
+		]
+	},
+	{
+		"id": 2,
+		"label": "2",
+		"final": true,
+		"transitions": [
+			{
+				"to": 1,
+				"with": ["a"]
+			}
+		]
+	},
+	{
+		"id": 3,
+		"label": "3",
+		"transitions": [
+			{
+				"to": 2,
+				"with": ["a", "b"]
+			},
+			{
+				"to": 3,
+				"with": ["b"]
+			}
+		]
+	}
+]

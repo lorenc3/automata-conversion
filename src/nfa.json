@@ -1,0 +1,48 @@
+[
+	{
+		"id": 0,
+		"label": "0",
+		"initial": true,
+		"transitions": [
+			{
+				"to": 1,
+				"with": ["0"]
+			},
+			{
+				"to": 0,
+				"with": ["0", "1"]
+			}
+		]
+	},
+	{
+		"id": 1,
+		"label": "1",
+		"transitions": [
+			{
+				"to": 2,
+				"with": ["0", "1"]
+			}
+		]
+	},
+	{
+		"id": 2,
+		"label": "2",
+		"transitions": [
+			{
+				"to": 3,
+				"with": ["0"]
+			}
+		]
+	},
+	{
+		"id": 3,
+		"label": "3",
+		"final": true,
+		"transitions": [
+			{
+				"to": 3,
+				"with": ["0", "1"]
+			}
+		]
+	}
+]
